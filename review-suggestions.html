@@ -490,6 +490,11 @@
       const draft = document.getElementById("review-draft");
       const characterCount = document.getElementById("character-count");
       const copyOpenButton = document.getElementById("copy-open");
+      // QR-scanner in-app browsers often suppress new tabs; navigate in-place on phones.
+      if (window.matchMedia("(pointer: coarse), (max-width: 768px)").matches) {
+        copyOpenButton.target = "_self";
+        copyOpenButton.removeAttribute("rel");
+      }
       const previousButton = document.getElementById("previous-review");
       const nextButton = document.getElementById("next-review");
 
