@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f7f3" />
+    <meta
+      name="description"
+      content="Share an honest review of your shopping experience with Maharaja Readymade."
+    />
+    <title>Maharaja Readymade · Share your experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        color-scheme: light;
+      }
+      body {
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+      .review-enter {
+        animation: review-enter 360ms ease-out both;
+      }
+      @keyframes review-enter {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-[radial-gradient(ellipse_at_top,_#e5f4e9_0%,_#f4f7f5_48%,_#f7f8f7_100%)] text-slate-900 antialiased"
+  >
+    <main
+      class="flex min-h-screen items-center justify-center px-4 py-8 sm:px-6 sm:py-12"
+    >
+      <section
+        class="w-full max-w-[460px] overflow-hidden rounded-[28px] border border-white/80 bg-white/95 shadow-[0_24px_80px_-28px_rgba(22,101,52,0.24)] ring-1 ring-slate-900/[0.03] sm:rounded-[32px]"
+        aria-labelledby="page-title"
+      >
+        <div class="p-6 sm:p-9">
+          <div class="mb-8 flex items-center gap-3">
+            <div
+              class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-lg shadow-green-700/10"
+            >
+              <span
+                class="text-sm font-extrabold tracking-tight text-green-700"
+                aria-hidden="true"
+                >MR</span
+              >
+            </div>
+            <div>
+              <p class="text-sm font-bold tracking-tight text-slate-900">
+                Maharaja Readymade
+              </p>
+              <p class="mt-0.5 text-xs font-medium text-slate-500">
+                Clothing · Fashion · Everyday style
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div
+              class="mb-3 inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5 text-xs font-semibold text-green-800"
+            >
+              <span class="size-1.5 rounded-full bg-green-500"></span>
+              Your feedback matters
+            </div>
+            <h1
+              id="page-title"
+              class="text-[28px] leading-tight font-bold tracking-[-0.04em] text-slate-950 sm:text-[32px]"
+            >
+              Maharaja Readymade
+            </h1>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              How was your shopping experience? Share an honest rating, choose
+              what stood out, and edit a draft so it reflects your own words.
+            </p>
+          </div>
+
+          <section
+            id="rating-section"
+            class="mt-7 rounded-2xl border border-slate-100 bg-slate-50/80 p-4 transition-opacity duration-300 sm:p-5"
+            aria-labelledby="rating-title"
+          >
+            <div class="flex items-center justify-between gap-3">
+              <h2
+                id="rating-title"
+                class="text-sm font-semibold text-slate-800"
+              >
+                Rate your experience at Maharaja Readymade
+              </h2>
+              <span
+                id="rating-label"
+                class="text-xs font-medium text-slate-400"
+                aria-live="polite"
+                >Select 1–5</span
+              >
+            </div>
+            <div
+              id="stars"
+              class="mt-3 flex items-center justify-between gap-1"
+              role="group"
+              aria-label="Rate your experience from 1 to 5 stars"
+            >
+              <button
+                type="button"
+                class="star-button flex size-12 items-center justify-center rounded-xl text-[34px] leading-none text-slate-300 transition hover:scale-110 hover:bg-amber-50 hover:text-amber-400 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none sm:size-[58px] sm:text-[40px]"
+                data-rating="1"
+                aria-label="1 star"
+                aria-pressed="false"
+              >
+                ★
+              </button>
+              <button
+                type="button"
+                class="star-button flex size-12 items-center justify-center rounded-xl text-[34px] leading-none text-slate-300 transition hover:scale-110 hover:bg-amber-50 hover:text-amber-400 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none sm:size-[58px] sm:text-[40px]"
+                data-rating="2"
+                aria-label="2 stars"
+                aria-pressed="false"
+              >
+                ★
+              </button>
+              <button
+                type="button"
+                class="star-button flex size-12 items-center justify-center rounded-xl text-[34px] leading-none text-slate-300 transition hover:scale-110 hover:bg-amber-50 hover:text-amber-400 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none sm:size-[58px] sm:text-[40px]"
+                data-rating="3"
+                aria-label="3 stars"
+                aria-pressed="false"
+              >
+                ★
+              </button>
+              <button
+                type="button"
+                class="star-button flex size-12 items-center justify-center rounded-xl text-[34px] leading-none text-slate-300 transition hover:scale-110 hover:bg-amber-50 hover:text-amber-400 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none sm:size-[58px] sm:text-[40px]"
+                data-rating="4"
+                aria-label="4 stars"
+                aria-pressed="false"
+              >
+                ★
+              </button>
+              <button
+                type="button"
+                class="star-button flex size-12 items-center justify-center rounded-xl text-[34px] leading-none text-slate-300 transition hover:scale-110 hover:bg-amber-50 hover:text-amber-400 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none sm:size-[58px] sm:text-[40px]"
+                data-rating="5"
+                aria-label="5 stars"
+                aria-pressed="false"
+              >
+                ★
+              </button>
+            </div>
+            <p class="mt-2 text-center text-xs text-slate-500">
+              Choose your honest rating to see matching review ideas
+            </p>
+          </section>
+
+          <section
+            id="keyword-section"
+            class="mt-6 hidden rounded-2xl border border-slate-100 bg-white p-4 sm:p-5"
+            aria-labelledby="keyword-title"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h2
+                  id="keyword-title"
+                  class="text-sm font-semibold text-slate-800"
+                >
+                  What did you work with us on?
+                </h2>
+                <p class="mt-1 text-xs leading-5 text-slate-500">
+                  Select keywords to find reviews that contain those words.
+                </p>
+              </div>
+              <button
+                id="clear-keywords"
+                type="button"
+                class="shrink-0 text-xs font-semibold text-green-700 hover:text-green-900"
+              >
+                Clear all
+              </button>
+            </div>
+            <label class="mt-4 block">
+              <span class="sr-only">Search keywords</span>
+              <input
+                id="keyword-search"
+                type="search"
+                placeholder="Search keywords…"
+                class="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm transition outline-none placeholder:text-slate-400 focus:border-green-500 focus:ring-4 focus:ring-green-100"
+              />
+            </label>
+            <div
+              id="keyword-list"
+              class="mt-3 flex max-h-52 flex-wrap gap-2 overflow-y-auto"
+              aria-label="Review keywords"
+            ></div>
+            <div class="mt-4 flex gap-2">
+              <input
+                id="custom-keyword"
+                type="text"
+                maxlength="80"
+                placeholder="Add your own keyword"
+                class="min-w-0 flex-1 rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none placeholder:text-slate-400 focus:border-green-500 focus:ring-4 focus:ring-green-100"
+              />
+              <button
+                id="add-custom-keyword"
+                type="button"
+                class="rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+              >
+                Add
+              </button>
+            </div>
+            <div class="mt-5 border-t border-slate-100 pt-4">
+              <button
+                id="generate-reviews"
+                type="button"
+                class="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-green-700/20 transition hover:bg-green-700 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none"
+              >
+                Find matching reviews
+              </button>
+            </div>
+          </section>
+
+          <div
+            id="loading-state"
+            class="mt-6 hidden items-center justify-center gap-3 rounded-2xl border border-green-100 bg-green-50/70 px-4 py-5 text-sm font-medium text-green-800"
+            role="status"
+            aria-live="polite"
+          >
+            <span
+              class="size-5 animate-spin rounded-full border-2 border-green-200 border-t-green-600"
+            ></span>
+            Searching your review collection…
+          </div>
+          <div
+            id="status-message"
+            class="mt-4 hidden rounded-xl border px-4 py-3 text-sm leading-5"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+          <section
+            id="suggestions-section"
+            class="mt-7 hidden"
+            aria-labelledby="suggestions-title"
+          >
+            <div class="mb-3 flex items-center justify-between">
+              <div>
+                <h2
+                  id="suggestions-title"
+                  class="text-base font-bold tracking-tight text-slate-900"
+                >
+                  Matching review suggestions
+                </h2>
+                <p class="mt-0.5 text-xs text-slate-500">
+                  Drafts are starting points—edit one to reflect your actual
+                  experience.
+                </p>
+              </div>
+              <span
+                id="review-counter"
+                class="hidden rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 tabular-nums"
+                aria-live="polite"
+                >1/3</span
+              >
+            </div>
+
+            <div class="flex hidden items-center gap-2">
+              <button
+                id="previous-review"
+                type="button"
+                class="flex size-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-xl text-slate-600 transition hover:border-green-200 hover:bg-green-50 hover:text-green-700 focus-visible:ring-4 focus-visible:ring-green-100 focus-visible:outline-none"
+                aria-label="Previous review"
+              >
+                ‹
+              </button>
+              <article
+                id="review-card"
+                class="review-enter min-h-[142px] flex-1 rounded-2xl border border-green-100 bg-gradient-to-br from-green-50/90 to-white p-4 shadow-sm shadow-green-900/[0.03] sm:p-5"
+                aria-live="polite"
+              >
+                <div class="mb-3 flex items-center gap-2">
+                  <span
+                    id="review-stars"
+                    class="text-sm tracking-[0.15em] text-amber-400"
+                    aria-label="Selected rating"
+                  ></span>
+                  <span class="h-1 w-1 rounded-full bg-slate-300"></span>
+                  <span
+                    class="text-[11px] font-semibold tracking-[0.12em] text-green-800 uppercase"
+                    >Review idea</span
+                  >
+                </div>
+                <p
+                  id="review-text"
+                  class="text-sm leading-6 text-slate-700"
+                ></p>
+              </article>
+              <button
+                id="next-review"
+                type="button"
+                class="flex size-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-xl text-slate-600 transition hover:border-green-200 hover:bg-green-50 hover:text-green-700 focus-visible:ring-4 focus-visible:ring-green-100 focus-visible:outline-none"
+                aria-label="Next review"
+              >
+                ›
+              </button>
+            </div>
+            <div id="variation-list" class="mt-4 space-y-3"></div>
+            <button
+              id="regenerate-reviews"
+              type="button"
+              class="mt-3 w-full rounded-xl border border-green-100 px-4 py-2.5 text-sm font-semibold text-green-800 transition hover:bg-green-50"
+            >
+              Get different suggestions
+            </button>
+          </section>
+
+          <section
+            id="draft-section"
+            class="mt-6 hidden"
+            aria-labelledby="draft-title"
+          >
+            <div class="mb-2 flex items-center justify-between gap-3">
+              <label
+                id="draft-title"
+                for="review-draft"
+                class="text-sm font-semibold text-slate-800"
+                >Your review</label
+              >
+              <span
+                id="character-count"
+                class="text-xs text-slate-400 tabular-nums"
+                >0/4000</span
+              >
+            </div>
+            <textarea
+              id="review-draft"
+              rows="5"
+              maxlength="4000"
+              placeholder="Edit the suggestion so it sounds like you…"
+              class="block w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 text-slate-700 transition outline-none placeholder:text-slate-400 focus:border-green-500 focus:ring-4 focus:ring-green-100"
+            ></textarea>
+            <p class="mt-2 text-xs leading-5 text-slate-500">
+              Please share only what reflects your real experience. Your draft
+              is copied for you to review and submit on Google.
+            </p>
+
+            <a
+              id="copy-open"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-disabled="true"
+              tabindex="-1"
+              class="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-green-700/20 transition hover:bg-green-700 hover:shadow-green-700/30 focus-visible:ring-4 focus-visible:ring-green-200 focus-visible:outline-none aria-disabled:cursor-not-allowed aria-disabled:bg-slate-300 aria-disabled:shadow-none"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                fill="none"
+                class="size-[18px]"
+              >
+                <path
+                  d="M7.5 5.5h7A1.5 1.5 0 0 1 16 7v7a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 6 14V7a1.5 1.5 0 0 1 1.5-1.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M4 12.5V5a1.5 1.5 0 0 1 1.5-1.5H13"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Copy &amp; Open Google Reviews
+            </a>
+            <button
+              id="new-draft"
+              type="button"
+              class="mt-2.5 min-h-11 w-full rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-slate-900 focus-visible:ring-4 focus-visible:ring-slate-100 focus-visible:outline-none"
+            >
+              Write a new draft
+            </button>
+          </section>
+        </div>
+        <div
+          class="flex items-center justify-center gap-1.5 border-t border-slate-100 bg-slate-50/70 px-5 py-3.5 text-[11px] font-medium text-slate-400"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            fill="none"
+            class="size-3.5"
+          >
+            <path
+              d="M10 2.5 16 5v4.4c0 3.5-2.4 6.5-6 8.1-3.6-1.6-6-4.6-6-8.1V5l6-2.5Z"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linejoin="round"
+            />
+            <path
+              d="m7.5 9.8 1.6 1.6 3.5-3.5"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Your review is shared only when you choose to open Google
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Fallback is used in local/static demos; production value comes from server env via /api/review-config.
+      const API_BASE_URL =
+        ["localhost", "127.0.0.1"].includes(window.location.hostname) &&
+        window.location.port === "5500"
+          ? `http://${window.location.hostname}:3000`
+          : "";
+      const apiUrl = (route) => `${API_BASE_URL}${route}`;
+      let googleReviewUrl = "";
+      const MAX_REVIEW_LENGTH = 4000;
+
+      async function loadPublicConfig() {
+        try {
+          const response = await fetch(apiUrl("/api/review-config"), {
+            headers: { Accept: "application/json" },
+            cache: "no-store",
+          });
+          if (!response.ok)
+            throw new Error("Review link config request failed.");
+          const config = await response.json();
+          if (
+            typeof config.googleReviewUrl === "string" &&
+            config.googleReviewUrl.trim()
+          ) {
+            const url = new URL(config.googleReviewUrl);
+            if (url.protocol !== "https:") {
+              throw new Error(
+                "The configured Google review link must use HTTPS.",
+              );
+            }
+            googleReviewUrl = url.href;
+            updateDraftState();
+          } else {
+            throw new Error(
+              "GOOGLE_REVIEW_URL is missing in the server .env file.",
+            );
+          }
+        } catch (error) {
+          console.error("Could not load Google review link:", error);
+          setStatus(
+            "Google Reviews link load nahi hua. Backend restart karein aur .env mein GOOGLE_REVIEW_URL check karein.",
+            "error",
+          );
+        }
+      }
+      loadPublicConfig();
+
+      const starButtons = [...document.querySelectorAll(".star-button")];
+      const ratingLabel = document.getElementById("rating-label");
+      const ratingSection = document.getElementById("rating-section");
+      const loadingState = document.getElementById("loading-state");
+      const statusMessage = document.getElementById("status-message");
+      const suggestionsSection = document.getElementById("suggestions-section");
+      const draftSection = document.getElementById("draft-section");
+      const reviewCard = document.getElementById("review-card");
+      const reviewText = document.getElementById("review-text");
+      const reviewStars = document.getElementById("review-stars");
+      const reviewCounter = document.getElementById("review-counter");
+      const draft = document.getElementById("review-draft");
+      const characterCount = document.getElementById("character-count");
+      const copyOpenButton = document.getElementById("copy-open");
+      const previousButton = document.getElementById("previous-review");
+      const nextButton = document.getElementById("next-review");
+
+      let selectedRating = 0;
+      let reviews = [];
+      let currentReviewIndex = 0;
+      let activeRequest = null;
+
+      function updateStars(rating, hoverRating = 0) {
+        const visibleRating = hoverRating || rating;
+        starButtons.forEach((button) => {
+          const value = Number(button.dataset.rating);
+          const isSelected = value <= visibleRating;
+          button.classList.toggle("text-amber-400", isSelected);
+          button.classList.toggle("text-slate-300", !isSelected);
+          button.setAttribute("aria-pressed", String(value === rating));
+        });
+      }
+
+      function setStatus(message, type = "info") {
+        statusMessage.textContent = message;
+        statusMessage.className =
+          "mt-4 rounded-xl border px-4 py-3 text-sm leading-5";
+        if (type === "error") {
+          statusMessage.classList.add(
+            "border-rose-100",
+            "bg-rose-50",
+            "text-rose-800",
+          );
+        } else if (type === "success") {
+          statusMessage.classList.add(
+            "border-green-100",
+            "bg-green-50",
+            "text-green-800",
+          );
+        } else {
+          statusMessage.classList.add(
+            "border-slate-200",
+            "bg-slate-50",
+            "text-slate-600",
+          );
+        }
+        statusMessage.classList.remove("hidden");
+      }
+
+      function clearStatus() {
+        statusMessage.classList.add("hidden");
+        statusMessage.textContent = "";
+      }
+
+      function updateDraftState() {
+        characterCount.textContent = `${draft.value.length}/${MAX_REVIEW_LENGTH}`;
+        const canOpenReviews = Boolean(draft.value.trim() && googleReviewUrl);
+        copyOpenButton.setAttribute("aria-disabled", String(!canOpenReviews));
+        if (canOpenReviews) {
+          copyOpenButton.href = googleReviewUrl;
+          copyOpenButton.removeAttribute("tabindex");
+        } else {
+          copyOpenButton.removeAttribute("href");
+          copyOpenButton.setAttribute("tabindex", "-1");
+        }
+      }
+
+      function showReview(index) {
+        if (!reviews.length) return;
+        currentReviewIndex = (index + reviews.length) % reviews.length;
+        const text = reviews[currentReviewIndex];
+        reviewText.textContent = text;
+        reviewCounter.textContent = `${currentReviewIndex + 1}/${reviews.length}`;
+        reviewStars.textContent = "★".repeat(selectedRating);
+        reviewStars.setAttribute("aria-label", `${selectedRating} star rating`);
+        draft.value = text;
+        updateDraftState();
+        reviewCard.classList.remove("review-enter");
+        void reviewCard.offsetWidth;
+        reviewCard.classList.add("review-enter");
+      }
+
+      async function getReviewsForRating(rating, keywords, signal) {
+        // The server maps this rating to its own configured MongoDB collection.
+        const query = new URLSearchParams();
+        keywords.forEach((keyword) => query.append("keyword", keyword));
+        const response = await fetch(
+          apiUrl(`/api/reviews/${rating}?${query}`),
+          {
+            headers: { Accept: "application/json" },
+            cache: "no-store",
+            signal,
+          },
+        );
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(
+            typeof data.error === "string"
+              ? data.error
+              : `Suggestions request failed (${response.status}).`,
+          );
+        }
+        if (!data || !Array.isArray(data.reviews))
+          throw new Error("The suggestions response was not valid JSON.");
+        return data.reviews
+          .filter((item) => typeof item === "string")
+          .slice(0, 3);
+      }
+
+      async function loadReviews(rating, keywords) {
+        if (activeRequest) activeRequest.abort();
+        const controller = new AbortController();
+        activeRequest = controller;
+        selectedRating = rating;
+        reviews = [];
+        currentReviewIndex = 0;
+        clearStatus();
+        suggestionsSection.classList.add("hidden");
+        draftSection.classList.add("hidden");
+        loadingState.classList.remove("hidden");
+        loadingState.classList.add("flex");
+        ratingLabel.textContent = `${rating} of 5 selected`;
+        ratingSection.classList.add("opacity-60");
+        updateStars(rating);
+
+        try {
+          // The API searches the rating collection for reviews containing any selected keyword.
+          const items = await getReviewsForRating(
+            rating,
+            keywords,
+            controller.signal,
+          );
+          if (controller.signal.aborted) return;
+          if (!items.length) {
+            setStatus(
+              "No reviews in this rating collection contain the selected keyword(s). Try different keywords.",
+            );
+            draftSection.classList.remove("hidden");
+            draft.value = "";
+            updateDraftState();
+            return;
+          }
+          reviews = items;
+          suggestionsSection.classList.remove("hidden");
+          draftSection.classList.remove("hidden");
+          renderVariations();
+          showReview(0);
+        } catch (error) {
+          if (error.name === "AbortError") return;
+          setStatus(
+            error instanceof Error
+              ? error.message
+              : "Could not load review suggestions. Please try again.",
+            "error",
+          );
+          draftSection.classList.remove("hidden");
+          draft.value = "";
+          updateDraftState();
+        } finally {
+          if (activeRequest === controller) {
+            loadingState.classList.add("hidden");
+            loadingState.classList.remove("flex");
+            ratingSection.classList.remove("opacity-60");
+            activeRequest = null;
+          }
+        }
+      }
+
+      starButtons.forEach((button) => {
+        button.addEventListener("mouseenter", () =>
+          updateStars(selectedRating, Number(button.dataset.rating)),
+        );
+        button.addEventListener("focus", () =>
+          updateStars(selectedRating, Number(button.dataset.rating)),
+        );
+      });
+      document
+        .getElementById("stars")
+        .addEventListener("mouseleave", () => updateStars(selectedRating));
+      document.getElementById("stars").addEventListener("focusout", (event) => {
+        if (!event.currentTarget.contains(event.relatedTarget))
+          updateStars(selectedRating);
+      });
+      previousButton.addEventListener("click", () =>
+        showReview(currentReviewIndex - 1),
+      );
+      nextButton.addEventListener("click", () =>
+        showReview(currentReviewIndex + 1),
+      );
+      draft.addEventListener("input", updateDraftState);
+
+      document.getElementById("new-draft").addEventListener("click", () => {
+        draft.value = "";
+        updateDraftState();
+        draft.focus();
+      });
+
+      function copyReviewText(text) {
+        // Copy synchronously from the click gesture before opening another tab.
+        // execCommand avoids the Clipboard API permission prompt in many embedded browsers.
+        const temporaryInput = document.createElement("textarea");
+        temporaryInput.value = text;
+        temporaryInput.setAttribute("readonly", "");
+        temporaryInput.style.position = "fixed";
+        temporaryInput.style.left = "-9999px";
+        temporaryInput.style.opacity = "0";
+        document.body.appendChild(temporaryInput);
+        temporaryInput.select();
+        temporaryInput.setSelectionRange(0, temporaryInput.value.length);
+        const copied = document.execCommand("copy");
+        temporaryInput.remove();
+        return copied;
+      }
+
+      copyOpenButton.addEventListener("click", async (event) => {
+        const text = draft.value.trim();
+        if (!text || !googleReviewUrl) {
+          event.preventDefault();
+          setStatus(
+            !googleReviewUrl
+              ? "Google Reviews link abhi load nahi hua. Backend aur GOOGLE_REVIEW_URL setting check karein."
+              : "Pehle apna review draft likhein.",
+            "error",
+          );
+          return;
+        }
+
+        const copied = copyReviewText(text);
+        if (copied) {
+          setStatus(
+            "Review copied. Google Reviews is opening in a new tab.",
+            "success",
+          );
+          return;
+        }
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            setStatus(
+              "Review copied. Google Reviews is opening in a new tab.",
+              "success",
+            );
+            return;
+          }
+        } catch (error) {
+          console.warn("Could not copy the review draft:", error);
+        }
+        setStatus(
+          "Google Reviews is opening, but the browser blocked automatic copying. Select the review text and copy it manually.",
+          "error",
+        );
+      });
+
+      const keywordSection = document.getElementById("keyword-section");
+      const keywordList = document.getElementById("keyword-list");
+      const keywordSearch = document.getElementById("keyword-search");
+      const customKeywordInput = document.getElementById("custom-keyword");
+      let availableKeywords = [];
+      let selectedKeywords = new Set();
+
+      function renderKeywords() {
+        const query = keywordSearch.value.trim().toLocaleLowerCase();
+        const matching = availableKeywords.filter((keyword) =>
+          keyword.label.toLocaleLowerCase().includes(query),
+        );
+        keywordList.replaceChildren();
+        if (!matching.length) {
+          const empty = document.createElement("p");
+          empty.className = "w-full py-2 text-sm text-slate-500";
+          empty.textContent = "No matching keywords. Add your own below.";
+          keywordList.append(empty);
+          return;
+        }
+        matching.forEach((keyword) => {
+          const chip = document.createElement("button");
+          const selected = selectedKeywords.has(keyword.label);
+          chip.type = "button";
+          chip.textContent = keyword.label;
+          chip.title = keyword.category || keyword.label;
+          chip.setAttribute("aria-pressed", String(selected));
+          chip.className = selected
+            ? "rounded-full border border-green-600 bg-green-600 px-3 py-2 text-xs font-semibold text-white transition"
+            : "rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-green-300 hover:bg-green-50 hover:text-green-800";
+          chip.addEventListener("click", () => {
+            if (selectedKeywords.has(keyword.label))
+              selectedKeywords.delete(keyword.label);
+            else selectedKeywords.add(keyword.label);
+            renderKeywords();
+          });
+          keywordList.append(chip);
+        });
+      }
+
+      async function loadKeywords() {
+        try {
+          const response = await fetch(apiUrl("/api/review-keywords"), {
+            headers: { Accept: "application/json" },
+            cache: "no-store",
+          });
+          const data = await response.json();
+          if (!response.ok || !Array.isArray(data.keywords)) {
+            throw new Error(data.error || "Could not load keyword options.");
+          }
+          availableKeywords = data.keywords.filter(
+            (item) =>
+              item && typeof item.label === "string" && item.label.trim(),
+          );
+          renderKeywords();
+        } catch (error) {
+          setStatus(
+            error instanceof Error
+              ? `${error.message} You can still add a custom keyword.`
+              : "Could not load keyword options. You can still add a custom keyword.",
+            "error",
+          );
+        }
+      }
+
+      function addCustomKeyword() {
+        const label = customKeywordInput.value.trim().slice(0, 80);
+        if (!label) return;
+        const existing = availableKeywords.find(
+          (keyword) =>
+            keyword.label.toLocaleLowerCase() === label.toLocaleLowerCase(),
+        );
+        const canonicalLabel = existing?.label || label;
+        if (!existing)
+          availableKeywords.push({ label: canonicalLabel, category: "Custom" });
+        selectedKeywords.add(canonicalLabel);
+        customKeywordInput.value = "";
+        renderKeywords();
+      }
+
+      function generateReviews() {
+        if (!selectedRating) {
+          setStatus(
+            "Please choose a star rating before generating drafts.",
+            "error",
+          );
+          return;
+        }
+        if (!selectedKeywords.size) {
+          setStatus(
+            "Select at least one keyword that reflects your experience.",
+            "error",
+          );
+          keywordSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+          return;
+        }
+
+        loadReviews(selectedRating, [...selectedKeywords]);
+      }
+
+      function renderVariations() {
+        const variationList = document.getElementById("variation-list");
+        variationList.replaceChildren();
+        reviews.forEach((text, index) => {
+          const article = document.createElement("article");
+          article.className =
+            "rounded-2xl border border-green-100 bg-gradient-to-br from-green-50/80 to-white p-4 shadow-sm";
+
+          const heading = document.createElement("div");
+          heading.className =
+            "mb-2 flex flex-wrap items-center justify-between gap-2";
+          const title = document.createElement("span");
+          title.className = "text-sm font-bold text-slate-800";
+          title.textContent = `Suggestion ${index + 1} · ${"★".repeat(selectedRating)}`;
+          const source = document.createElement("span");
+          source.className =
+            "rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-green-800";
+          source.textContent = "From your review collection";
+          heading.append(title, source);
+
+          const editor = document.createElement("textarea");
+          editor.rows = index === 0 ? 3 : index === 1 ? 4 : 6;
+          editor.maxLength = MAX_REVIEW_LENGTH;
+          editor.value = text;
+          editor.setAttribute("aria-label", `Edit review draft ${index + 1}`);
+          editor.className =
+            "block w-full resize-y rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-sm leading-6 text-slate-700 outline-none focus:border-green-500 focus:ring-4 focus:ring-green-100";
+          editor.addEventListener("input", () => {
+            reviews[index] = editor.value;
+            if (currentReviewIndex === index) {
+              draft.value = editor.value;
+              updateDraftState();
+            }
+          });
+
+          const copyButton = document.createElement("button");
+          copyButton.type = "button";
+          copyButton.className =
+            "mt-3 w-full rounded-xl border border-green-200 bg-white px-4 py-2.5 text-sm font-bold text-green-800 transition hover:bg-green-50";
+          copyButton.textContent = "Copy this review";
+          copyButton.addEventListener("click", async () => {
+            const textToCopy = editor.value.trim();
+            if (!textToCopy) return;
+            let copied = copyReviewText(textToCopy);
+            if (!copied && navigator.clipboard && window.isSecureContext) {
+              try {
+                await navigator.clipboard.writeText(textToCopy);
+                copied = true;
+              } catch (error) {
+                console.warn("Could not copy review draft:", error);
+              }
+            }
+            draft.value = textToCopy;
+            updateDraftState();
+            setStatus(
+              copied
+                ? "Review draft copied. Please make sure it reflects your real experience before sharing."
+                : "Automatic copying was blocked. Select the draft text and copy it manually.",
+              copied ? "success" : "error",
+            );
+          });
+
+          article.append(heading, editor, copyButton);
+          variationList.append(article);
+        });
+      }
+
+      document.addEventListener(
+        "click",
+        (event) => {
+          const target = event.target.closest("button");
+          if (!target) return;
+          if (target.classList.contains("star-button")) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            selectedRating = Number(target.dataset.rating);
+            reviews = [];
+            selectedKeywords.clear();
+            clearStatus();
+            ratingLabel.textContent = `${selectedRating} of 5 selected`;
+            updateStars(selectedRating);
+            keywordSection.classList.remove("hidden");
+            suggestionsSection.classList.add("hidden");
+            draftSection.classList.add("hidden");
+            loadKeywords();
+          } else if (target.id === "regenerate-reviews") {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            if (selectedRating && selectedKeywords.size)
+              loadReviews(selectedRating, [...selectedKeywords]);
+          } else if (target.id === "generate-reviews") {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            generateReviews();
+          } else if (target.id === "clear-keywords") {
+            event.stopImmediatePropagation();
+            selectedKeywords.clear();
+            renderKeywords();
+          } else if (target.id === "add-custom-keyword") {
+            event.stopImmediatePropagation();
+            addCustomKeyword();
+          }
+        },
+        true,
+      );
+
+      keywordSearch.addEventListener("input", renderKeywords);
+      customKeywordInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          addCustomKeyword();
+        }
+      });
+    </script>
+  </body>
+</html>
