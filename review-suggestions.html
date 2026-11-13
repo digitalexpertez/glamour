@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#f3f7f3" />
     <meta
       name="description"
-      content="Share an honest review of your shopping experience with Maharaja Readymade."
+      content="Share an honest review of your shopping experience with Glamour Zone."
     />
-    <title>Maharaja Readymade · Share your experience</title>
+    <title>Glamour Zone · Share your experience</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       html {
@@ -63,15 +63,58 @@
             <div
               class="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-lg shadow-green-700/10"
             >
-              <span
-                class="text-sm font-extrabold tracking-tight text-green-700"
+              <svg
+                class="size-9"
+                viewBox="0 0 48 48"
+                fill="none"
                 aria-hidden="true"
-                >MR</span
               >
+                <defs>
+                  <linearGradient
+                    id="glamour-logo-gradient"
+                    x1="10"
+                    y1="10"
+                    x2="38"
+                    y2="40"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#f43f5e" />
+                    <stop offset="1" stop-color="#c026d3" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="m13 20 5.5-10h11L35 20"
+                  stroke="url(#glamour-logo-gradient)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <rect
+                  x="9.5"
+                  y="20"
+                  width="29"
+                  height="19"
+                  rx="7"
+                  fill="url(#glamour-logo-gradient)"
+                />
+                <circle
+                  cx="24"
+                  cy="29.5"
+                  r="5.25"
+                  stroke="white"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M39 8v7m-3.5-3.5h7"
+                  stroke="#f59e0b"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
             </div>
             <div>
               <p class="text-sm font-bold tracking-tight text-slate-900">
-                Maharaja Readymade
+                Glamour Zone
               </p>
               <p class="mt-0.5 text-xs font-medium text-slate-500">
                 Clothing · Fashion · Everyday style
@@ -90,7 +133,7 @@
               id="page-title"
               class="text-[28px] leading-tight font-bold tracking-[-0.04em] text-slate-950 sm:text-[32px]"
             >
-              Maharaja Readymade
+              Glamour Zone
             </h1>
             <p class="mt-2 text-sm leading-6 text-slate-500">
               How was your shopping experience? Share an honest rating, choose
@@ -108,7 +151,7 @@
                 id="rating-title"
                 class="text-sm font-semibold text-slate-800"
               >
-                Rate your experience at Maharaja Readymade
+                Rate your experience at Glamour Zone
               </h2>
               <span
                 id="rating-label"
@@ -170,7 +213,7 @@
               </button>
             </div>
             <p class="mt-2 text-center text-xs text-slate-500">
-              Choose your honest rating to see matching review ideas
+              Choose your honest rating to see a random matching review idea
             </p>
           </section>
 
@@ -617,7 +660,7 @@
         updateStars(rating);
 
         try {
-          // The API searches the rating collection for reviews containing any selected keyword.
+          // With no keywords, the API returns random suggestions from the selected rating collection.
           const items = await getReviewsForRating(
             rating,
             keywords,
@@ -626,7 +669,7 @@
           if (controller.signal.aborted) return;
           if (!items.length) {
             setStatus(
-              "No reviews in this rating collection contain the selected keyword(s). Try different keywords.",
+              "No review suggestions are currently available for this rating. Please try again later.",
             );
             draftSection.classList.remove("hidden");
             draft.value = "";
@@ -785,12 +828,15 @@
         });
       }
 
-      async function loadKeywords() {
+      async function loadKeywords(rating) {
         try {
-          const response = await fetch(apiUrl("/api/review-keywords"), {
-            headers: { Accept: "application/json" },
-            cache: "no-store",
-          });
+          const response = await fetch(
+            apiUrl(`/api/review-keywords?rating=${rating}`),
+            {
+              headers: { Accept: "application/json" },
+              cache: "no-store",
+            },
+          );
           const data = await response.json();
           if (!response.ok || !Array.isArray(data.keywords)) {
             throw new Error(data.error || "Could not load keyword options.");
@@ -929,10 +975,10 @@
             clearStatus();
             ratingLabel.textContent = `${selectedRating} of 5 selected`;
             updateStars(selectedRating);
-            keywordSection.classList.remove("hidden");
+            keywordSection.classList.add("hidden");
             suggestionsSection.classList.add("hidden");
             draftSection.classList.add("hidden");
-            loadKeywords();
+            loadReviews(selectedRating, []);
           } else if (target.id === "regenerate-reviews") {
             event.stopImmediatePropagation();
             event.preventDefault();

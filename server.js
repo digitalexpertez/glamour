@@ -62,21 +62,68 @@ app.get("/api/review-config", (_request, response) => {
   response.json({ googleReviewUrl: process.env.GOOGLE_REVIEW_URL || "" });
 });
 
-app.get("/api/review-keywords", (_request, response) => {
-  response.json({
-    keywords: [
-      { label: "Quality", category: "Product" },
-      { label: "Fabric", category: "Product" },
-      { label: "Fit", category: "Product" },
-      { label: "Comfort", category: "Product" },
-      { label: "Design", category: "Product" },
-      { label: "Collection", category: "Store" },
-      { label: "Variety", category: "Store" },
-      { label: "Price", category: "Value" },
-      { label: "Staff", category: "Service" },
-      { label: "Service", category: "Service" },
-      { label: "Shopping", category: "Experience" },
+app.get("/api/review-keywords", (request, response) => {
+  const keywordsByRating = {
+    1: [
+      "high pricing",
+      "poor quality match",
+      "staff behaviour issues",
+      "value for money concerns",
+      "customer service gaps",
+      "limited collection",
+      "disappointing experience",
+      "not recommended",
     ],
+    2: [
+      "below expectations",
+      "average product quality",
+      "pricey relative to quality",
+      "inattentive service",
+      "needs improvement",
+      "mixed collection",
+      "service inconsistency",
+      "not fully satisfied",
+    ],
+    3: [
+      "average overall experience",
+      "decent variety",
+      "okay but high pricing",
+      "standard service",
+      "mixed feedback",
+      "convenient location",
+      "nothing outstanding",
+      "middle-of-the-road",
+    ],
+    4: [
+      "good collection and variety",
+      "helpful staff",
+      "positive overall visit",
+      "minor pricing notes",
+      "convenient store",
+      "recommended with small caveats",
+      "solid local option",
+      "pleasant shopping",
+    ],
+    5: [
+      "excellent variety",
+      "great collection",
+      "friendly and helpful staff",
+      "good value and quality",
+      "highly recommended",
+      "impressive product range",
+      "smooth billing experience",
+      "wonderful store visit",
+    ],
+  };
+  const rating = Number(request.query.rating);
+  const labels =
+    keywordsByRating[rating] || Object.values(keywordsByRating).flat();
+
+  response.json({
+    keywords: labels.map((label) => ({
+      label,
+      category: `${rating || "All"}-star feedback`,
+    })),
   });
 });
 
@@ -154,7 +201,7 @@ app.get("/", (_request, response) => {
 
 app.listen(port, () => {
   console.log(
-    `Maharaja Readymade review page is running at http://localhost:${port}`,
+    `Glamour Zone review page is running at http://localhost:${port}`,
   );
 });
 
